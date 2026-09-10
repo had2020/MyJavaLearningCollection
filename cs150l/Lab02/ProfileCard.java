@@ -41,4 +41,28 @@ public class ProfileCard {
 
 /*
  * Mission 5: Change, Inspect, Record
+ * "git status" shows me that my current code changes are up to date
+ * with my repo for this lab on github, however it can see their is
+ * now a new untracked file that I have yet to add to git's tracking System
+ *
+ * "git add ." I added all files in the directory to gits tracking system,
+ * including the new untracked file from today.
+ *
+ * "git commit -m "Create Profile card program"" this bash command I
+ * I entered commits all the tracked code changes into the local
+ * git repo with the -m message in the quotes after.
+ *
+ * "git push" pushed the changes from my local git repo into my
+ * github repo for this project.
+ *
+ * "git log --oneline" shows me my recent commits for this repo.
+ *
+ * "git status" running that git status bash command agian, now teells
+ * me that mey code changes are now ahead of my orgin, which means
+ * I messed up and forgot to git pull my code changes from another machine
+ * I just decided my other machines code changes were not important
+ * and just did "git push --force"
+ *
+ * Lastly I used git diff after writing all this to see the uncommited, code
+ * changes.
  */
