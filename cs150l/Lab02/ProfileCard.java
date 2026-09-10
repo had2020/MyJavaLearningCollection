@@ -14,6 +14,20 @@ public class ProfileCard {
     int number = input.nextInt();
     System.out.println("Hello, " + name + "!");
     System.out.println("Your number is " + number + ".");
+
+    // This was added for Mission 6: Partner Requirement
+    System.out.println("What is your second favorite number");
+
+    int secondNum = input.nextInt(); // asks for one additional favorite item.
+
+    number += secondNum; // My prediction is that this line will
+    // assign number with the result of number + secondNum.
+
+    System.out.println(number); // This will print the number stored in
+    // the number variable.
+
+    // End of mission 6 addition
+
     input.close(); // I didn't fully understand this line until after running.
     // Once I did run the code, I was able to visuable see it stop taking input.
   }
