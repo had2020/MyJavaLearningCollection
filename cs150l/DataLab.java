@@ -1,3 +1,8 @@
+/*
+Author: Hadrian Lazic
+Assignment: Lab 03 – Numeric Expressions and Data Types
+*/
+
 public class DataLab {
   public static void main(String[] args) {
     int total = 17; // a 32bit register stores the literal value 17
@@ -43,7 +48,104 @@ public class DataLab {
     // Runtime error example:
     // int fa = 5 / 0;
     // Logic error example:
-    System.out.println((root % 5) ^ 67); // bcause XOR is a bitwise operations for non-floating point
+    // System.out.println((root % 5) ^ 67); // bcause XOR is a bitwise operations
+    // for non-floating point
 
+    System.out.println("Virtual Bytecode Machine within a VirtualBytecode machine starting...");
+
+    // stored within 4 bits
+    enum Opcode {
+      MOV, // 0
+      ADD, // 1
+      SUB, // 2
+      MUL, // 3
+      DIV, // 4
+      MOD, // 5
+      SQRTSELF, // 6
+      POW, // 7
+      ABS, // 8
+      MAX, // 9
+      MIN, // 10
+      ROUND, // 11
+      CASTRETURNDOUBLE, // 12
+      CASTRETURNINT, // 13
+      AND, // 14
+      XOR, // 15
+    }
+
+    double[] registers = { 0, 0, 0, 0 };
+
+    for (int i = 0; i > 256; i++) {
+      int maskedOpcode = i & 0b00001111;
+      int maskedArg0 = i & 0b11000000;
+      int maskedArg1 = i & 0b00110000;
+
+      switch (maskedOpcode) {
+        case 0: {
+          registers[maskedArg0] = registers[maskedArg1];
+          break;
+        }
+        case 1: {
+          registers[maskedArg0] += registers[maskedArg1];
+          break;
+        }
+        case 2: {
+          registers[maskedArg0] -= registers[maskedArg1];
+          break;
+        }
+        case 3: {
+          registers[maskedArg0] *= registers[maskedArg1];
+          break;
+        }
+        case 4: {
+          registers[maskedArg0] /= registers[maskedArg1];
+          break;
+        }
+        case 5: {
+          registers[maskedArg0] %= registers[maskedArg1];
+          break;
+        }
+        case 6: {
+          registers[maskedArg0] = Math.sqrt((double) registers[maskedArg1]);
+          break;
+        }
+        case 7: {
+          registers[maskedArg0] = Math.pow((double) registers[maskedArg1], (double) registers[maskedArg1]);
+          break;
+        }
+        case 8: {
+          registers[maskedArg0] = Math.abs(registers[maskedArg1]);
+          break;
+        }
+        case 9: {
+          registers[maskedArg0] = Math.max(registers[maskedArg0], registers[maskedArg1]);
+          break;
+        }
+        case 10: {
+          registers[maskedArg0] = Math.max(registers[maskedArg0], registers[maskedArg1]);
+          break;
+        }
+        case 11: {
+          registers[maskedArg0] = Math.round(registers[maskedArg1]);
+          break;
+        }
+        case 12: {
+          System.out.println("" + (double) registers[maskedArg0]);
+          break;
+        }
+        case 13: {
+          System.out.println("" + (int) registers[maskedArg0]);
+          break;
+        }
+        case 14: {
+          registers[maskedArg0] = (int) registers[maskedArg0] & (int) registers[maskedArg1];
+          break;
+        }
+        case 15: {
+          registers[maskedArg0] = (int) registers[maskedArg0] ^ (int) registers[maskedArg1];
+          break;
+        }
+      }
+    }
   }
 }
