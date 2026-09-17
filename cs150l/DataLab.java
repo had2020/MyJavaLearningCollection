@@ -73,12 +73,12 @@ public class DataLab {
       XOR, // 15
     }
 
-    double[] registers = { 0, 0, 0, 0, 0, 0 };
+    double[] registers = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
-    for (int i = 0; i < 64; i++) {
+    for (int i = 0; i < 256; i++) {
       int maskedOpcode = i & 0b00001111;
-      int maskedArg0 = (byte) i & 0b11000000;
-      int maskedArg1 = (byte) i & 0b00110000;
+      int maskedArg0 = (byte) (i & 0b11000000) >> 6;
+      int maskedArg1 = (byte) (i & 0b00110000) >> 4;
 
       System.out.println("" + registers);
 
