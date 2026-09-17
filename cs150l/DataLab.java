@@ -151,3 +151,14 @@ public class DataLab {
     }
   }
 }
+
+/*
+ * 1.) 17 / 5 does integar division and results in 3, while (double) 17 / 5
+ * reults in a floating point number.
+ * 2.) System.out.println(averageA); // 5.0
+ * System.out.println(averageB); // 3.4
+ * System.out.println(remainder); // 3
+ * System.out.println(root); // 4.12310562562
+ * System.out.println(rounded); // 4
+ * 
+ */
