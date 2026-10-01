@@ -6,9 +6,25 @@ public class Vault2 {
         int key1 = scan.nextInt();
         int key2 = scan.nextInt();
 
+        /*  Before Modify
         if (key1 >= 1 && key1 <= 100 && key2 >= 1 && key2 <= 100) {
             if (key1 + key2 == 100) {
                 if (key1 > key2) {
+                    System.out.println("Vault opened!");
+                } else {
+                    System.out.println("Locked: key order failed.");
+                }
+            } else {
+                System.out.println("Locked: total check failed.");
+            }
+        } else {
+            System.out.println("Locked: key range failed.");
+        }
+        */ //After Modify
+
+        if (key1 >= 1 && key1 <= 100 && key2 >= 1 && key2 <= 100) {
+            if (key1 + key2 == 100) {
+                if (key1 < key2) {
                     System.out.println("Vault opened!");
                 } else {
                     System.out.println("Locked: key order failed.");
@@ -35,6 +51,12 @@ public class Vault2 {
 
         5.) Any pair of inputs where both add up to 100, the first one is bigger,
         and the first is between 0-100 exclusive, and the second it between 1-100 exclusive.
+
+        Modify the Rule
+        I changed the branch that would open the vault if the first key was greater,
+        than the second key, and changed the greator than equality operator to less than.
+
+        when testing with the inputs 98 and 2 it will no longer crack the vault.
         */
     }
 }
