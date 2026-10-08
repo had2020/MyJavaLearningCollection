@@ -50,4 +50,17 @@ of the iterations ahead of time.
 
 3.) Hand-calculated 10, actual 10
 
+Mission 4: Break It on Purpose
+
+1.) The loop runs forever after removing the increment in the loop body.
+
+2.) When I changed the condition from <= to < the loop stopped 1 sooner.
+
+3.) The accumlator never accumlates since, it can never keep states, for the next loop, due to the reset.
+
+Mission 5: Record the work
+
+Check the screenshot
+
+
 */
